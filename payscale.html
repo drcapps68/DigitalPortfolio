@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="AngularJS, payscale">
+    <meta name="author" content="Daniel Capps">
+
+
+
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+
+    <title>Payscale Finder in Angular</title>
+  </head>
+  <body>
+    <!-- Header -->
+			<header id="header">
+				<a href="/index.html" class="title">Dan Capps</a>
+				<nav>
+					<ul>
+						<li><a href="/index.html">Home</a></li>
+						<li><a href="/portfolio/experience.html" >Experience</a></li>
+						<li><a href="/portfolio/fullreferences.html" >References</a></li>
+						<li><a href="/portfolio/payscale.html" class="active">Payscale</a></li>
+					</ul>
+				</nav>
+			</header>
+
+      <!-- wrapper -->
+      <div id="wrapper">
+        <section id="main" class="wrapper">
+          <div class="inner">
+            <h1 class="major">Payscale Finder Using AngularJS</h1>
+
+            <div ng-app="" ng-init="hoursPerYear=2080">
+              <form>
+                <h2>Convert Annual Salary to Hourly Salary</h2>
+                <input id="annualInput" name="annualInput" type="number" placeholder="Annual Salary" ng-model="annualInput" />
+                <ul class="actions">
+                  <li><input type="submit" value="Check" class="special" ng-model="annualAnswer" /></li>
+                  <li><input type="reset" value="Reset" /></i>
+                </ul>
+
+              </form>
+
+              <p ng-show="annualAnswer">An annual salary of ${{annualInput}} works out to {{annualInput / hoursPerYear}}</p>
+              <h2>Convert Hourly Salary to Annual Salary</h2>
+              <p></p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- footer -->
+      <footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Apps by Capps. All rights reserved.</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/jquery.number.js"></script>
+      <script src="assets/js/jquery.number.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+  </body>
+</html>
