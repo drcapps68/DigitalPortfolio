@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="AngularJS, payscale">
+    <meta name="keywords" content="JQueryJS, payscale">
     <meta name="author" content="Daniel Capps">
 
 
@@ -12,7 +12,9 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 
-    <title>Payscale Finder in Angular</title>
+
+
+    <title>Payscale Finder with JQuery</title>
   </head>
   <body>
     <!-- Header -->
@@ -32,22 +34,33 @@
       <div id="wrapper">
         <section id="main" class="wrapper">
           <div class="inner">
-            <h1 class="major">Payscale Finder Using AngularJS</h1>
+            <h1 class="major">Payscale Finder Using JQueryJS</h1>
 
-            <div ng-app="" ng-init="hoursPerYear=2080">
+            <div ng-app="">
               <form>
                 <h2>Convert Annual Salary to Hourly Salary</h2>
-                <input id="annualInput" name="annualInput" type="number" placeholder="Annual Salary" ng-model="annualInput" />
+                <input id="annualInput" name="annualInput" type="text" placeholder="Annual Salary" ng-model="annualInput" />
                 <ul class="actions">
-                  <li><input type="submit" value="Check" class="special" ng-model="annualAnswer" /></li>
+                  <li><input type="submit" value="Check" class="special" ng-model="annualAnswer" onclick="calcAnnualSalary()"/></li>
                   <li><input type="reset" value="Reset" /></i>
                 </ul>
+                <h4 id="results" style="margin-top: 25px;"></h4>
 
               </form>
+              <hr>
+              <form>
+                <h2>Convert Hourly Salary to Annual Salary</h2>
+                <input id="hourlyInput" name="hourlyInput" type="text" placeholder="Hourly Salary" ng-model="hourlyInput" />
+                <ul class="actions">
+                  <li><input type="submit" value="Check" class="special" ng-model="hourlyAnswer" onclick="calcHourlySalary()"/></li>
+                  <li><input type="reset" value="Reset" /></i>
+                </ul>
+                <div class="">
+                  <p>The annual salary works out to {{$results}} per year</p>
+                </div>
 
-              <p ng-show="annualAnswer">An annual salary of ${{annualInput}} works out to {{annualInput / hoursPerYear}}</p>
-              <h2>Convert Hourly Salary to Annual Salary</h2>
-              <p></p>
+
+              </form>
             </div>
           </div>
         </section>
@@ -74,6 +87,26 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+      <script>
+        function calcAnnualSalary()
+          {
+            var hoursPerYear = 2080;
+            var annualWage = parseFloat(document.getElementById('annualInput').value);
+            var calculate = annualWage / hoursPerYear;
+
+            document.getElementById('results').innerHTML = calculate;
+          }
+      </script>
+      <script>
+        function calcHourlySalary()
+          {
+            var hoursPerYear = 2080;
+            var hourlyWage = parseFloat(document.getElementById('hourlyInput').value);
+            var calculate = hourlyWage * hoursPerYear;
+
+            document.getElementById('results').innerHTML = calculate;
+          }
+      </script>
 
   </body>
 </html>
