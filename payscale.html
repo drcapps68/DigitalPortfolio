@@ -78,35 +78,35 @@
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
-      <script src="assets/js/jquery.number.js"></script>
-      <script src="assets/js/jquery.number.min.js"></script>
+            <script src="assets/js/jquery.number.js"></script>
+            <script src="assets/js/jquery.number.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-      <script>
-        function calcAnnualSalary()
-          {
-            var hoursPerYear = 2080;
-            var annualWage = parseFloat(document.getElementById('annualInput').value);
-            var calculate = annualWage / hoursPerYear;
+            <script src="assets/js/main.js"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+          <script>
+            function calcAnnualSalary()
+              {
+                var hoursPerYear = 2080;
+                var annualWage = parseFloat(document.getElementById('annualInput').value);
+                var calculate = annualWage / hoursPerYear;
 
-            document.getElementById('results').innerHTML = calculate.toFixed(2);
-          }
-      </script>
-      <script>
-        function calcHourlySalary()
-          {
-            var hoursPerYear = 2080;
-            var hourlyWage = parseFloat(document.getElementById('hourlyInput').value);
-            var calculate = hourlyWage * hoursPerYear;
+                document.getElementById('results').innerHTML = calculate.toFixed(2);
+              }
+          </script>
+          <script>
+            function calcHourlySalary()
+              {
+                var hoursPerYear = 2080;
+                var hourlyWage = parseFloat(document.getElementById('hourlyInput').value);
+                var calculate = hourlyWage * hoursPerYear;
 
-            document.getElementById('results').innerHTML = calculate.toFixed(2);
-          }
-      </script>
+                document.getElementById('results').innerHTML = calculate.toFixed(2);
+              }
+          </script>
 
   </body>
 </html>
