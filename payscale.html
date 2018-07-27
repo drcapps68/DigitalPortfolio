@@ -44,7 +44,7 @@
                   <li><input type="submit" value="Check" class="special" ng-model="annualAnswer" onclick="calcAnnualSalary()"/></li>
                   <li><input type="reset" value="Reset" /></li>
                 </ul>
-                <h4 id="results" style="margin-top: 25px;"></h4>
+                <h4 id="annualResults" style="margin-top: 25px;"></h4>
 
               </form>
               <hr>
@@ -55,9 +55,7 @@
                   <li><input type="submit" value="Check" class="special" ng-model="hourlyAnswer" onclick="calcHourlySalary()"/></li>
                   <li><input type="reset" value="Reset" /></li>
                 </ul>
-                <div class="">
-                  <p>The annual salary works out to {{$results}} per year</p>
-                </div>
+                <h4 id="hourlyResults" style="margin-top: 25px;"></h4>
 
 
               </form>
@@ -94,7 +92,7 @@
                 var annualWage = parseFloat(document.getElementById('annualInput').value);
                 var calculate = annualWage / hoursPerYear;
 
-                document.getElementById('results').innerHTML = calculate.toFixed(2);
+                document.getElementById('annualResults').innerHTML = calculate.toFixed(2);
               }
           </script>
           <script>
@@ -104,7 +102,7 @@
                 var hourlyWage = parseFloat(document.getElementById('hourlyInput').value);
                 var calculate = hourlyWage * hoursPerYear;
 
-                document.getElementById('results').innerHTML = calculate.toFixed(2);
+                document.getElementById('hourlyResults').innerHTML = calculate.toFixed(2);
               }
           </script>
 
