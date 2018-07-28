@@ -98,7 +98,7 @@
                 var annualWage = parseFloat(document.getElementById('annualInput').value);
                 var calculate = annualWage / hoursPerYear;
 
-                document.getElementById('annualResults').innerHTML = calculate.toFixed(2);
+                document.getElementById('annualResults').innerHTML = "The annual wage is $" + calculate.toFixed(2);
               }
             function calcHourlySalary()
               {
@@ -106,7 +106,7 @@
                 var hourlyWage = parseFloat(document.getElementById('hourlyInput').value);
                 var calculate = hourlyWage * hoursPerYear;
 
-                document.getElementById('hourlyResults').innerHTML = calculate.toFixed(2);
+                document.getElementById('hourlyResults').innerHTML = "The hourly wage is $" + calculate.toFixed(2);
               }
 
             function refresh()
