@@ -16,6 +16,9 @@ public class portfoliotest1 {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Dan\\Downloads\\chromedriver_win32\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
+        //Maximize the window
+        driver.manage().window().maximize();
+
         //Navigate to website
         driver.get("http://dcapps.greenrivertech.net");
         Thread.sleep(2000);
@@ -29,7 +32,7 @@ public class portfoliotest1 {
         Thread.sleep(3000);
         driver.findElement(By.name("howican")).click();
         Thread.sleep(3000);
-        driver.findElement(By.name("whoknowme")).click();
+        driver.findElement(By.name("whoknowsme")).click();
         Thread.sleep(3000);
         driver.findElement(By.name("contact")).click();
         Thread.sleep(3000);
