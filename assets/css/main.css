@@ -1639,7 +1639,7 @@
 /* Type */
 
 	body, input, select, textarea {
-		color: black;
+		color: #ffffff;
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 16.5pt;
 		font-weight: normal;
@@ -1742,8 +1742,34 @@
 		font-size: 1.75em;
 	}
 
+
+
 	h3 {
 		font-size: 1.1em;
+	}
+
+	h3.major{
+		margin: 0 0 1.3em 0;
+		position: relative;
+		padding-bottom: 0.35em;
+	}
+
+	h3.major:after{
+		background-image: -moz-linear-gradient(to right, #5e42a6, #b74e91);
+		background-image: -webkit-linear-gradient(to right, #5e42a6, #b74e91);
+		background-image: -ms-linear-gradient(to right, #5e42a6, #b74e91);
+		background-image: linear-gradient(to right, #5e42a6, #b74e91);
+		-moz-transition: max-width 0.2s ease;
+		-webkit-transition: max-width 0.2s ease;
+		-ms-transition: max-width 0.2s ease;
+		transition: max-width 0.2s ease;
+		border-radius: 0.2em;
+		bottom: 0;
+		content: '';
+		height: 0.05em;
+		position: absolute;
+		right: 0;
+		width: 100%;
 	}
 
 	h4 {
