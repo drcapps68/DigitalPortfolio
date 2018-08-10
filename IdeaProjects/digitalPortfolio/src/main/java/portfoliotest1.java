@@ -45,6 +45,8 @@ public class portfoliotest1 {
         //TFW display
         driver.findElement(By.name("whatido")).click();
         Thread.sleep(1000);
+        driver.findElement(By.name("tfwbutton")).click();
+        Thread.sleep(3000);
 
 
         //Close program
