@@ -49,7 +49,8 @@ public class appsbycappsdemo {
         Thread.sleep(1000);
         driver.findElement(By.name("tfwbutton")).click();
         Thread.sleep(3000);
-
+        driver.navigate().back();
+        Thread.sleep(1500);
 
         //Close program
         driver.close();
