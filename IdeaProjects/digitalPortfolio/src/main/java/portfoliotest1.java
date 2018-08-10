@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 /* Dan Capps
 * 8.10.18
 * portfoliotest1.java
-* This program runs a Selenium WebDriver test for my digital portfolio at appbycapps.com
+* This program runs a Selenium WebDriver test for my digital portfolio at dcapps.greenrivertech.net
 */
 
 public class portfoliotest1 {
