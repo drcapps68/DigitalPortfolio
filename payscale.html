@@ -1,6 +1,13 @@
 <!DOCTYPE html>
+
+/* Dan Capps
+* 8.10.18
+* payscale.html
+* This page calculates either annual or an hourly salary on appbycapps.com
+*/
+
 <html lang="en" dir="ltr">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="keywords" content="JQueryJS, payscale">
     <meta name="author" content="Daniel Capps">
@@ -8,116 +15,116 @@
 
 
     <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 
 
 
     <title>Payscale Finder with JQuery</title>
-</head>
-<body>
-<!-- Header -->
-<header id="header">
-    <a href="/index.html" class="title">Dan Capps</a>
-    <nav>
-        <ul>
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/portfolio/experience.html" >Experience</a></li>
-            <li><a href="/portfolio/fullreferences.html" >References</a></li>
-            <li><a href="/portfolio/payscale.html" class="active">Payscale</a></li>
-        </ul>
-    </nav>
-</header>
+  </head>
+  <body>
+    <!-- Header -->
+			<header id="header">
+				<a href="/index.html" class="title">Dan Capps</a>
+				<nav>
+					<ul>
+						<li><a href="/index.html">Home</a></li>
+						<li><a href="/portfolio/experience.html" >Experience</a></li>
+						<li><a href="/portfolio/fullreferences.html" >References</a></li>
+						<li><a href="/portfolio/payscale.html" class="active">Payscale</a></li>
+					</ul>
+				</nav>
+			</header>
 
-<!-- wrapper -->
-<div id="wrapper">
-    <section id="main" class="wrapper">
-        <div class="inner">
+      <!-- wrapper -->
+      <div id="wrapper">
+        <section id="main" class="wrapper">
+          <div class="inner">
             <h1 class="major">Payscale Finder Using JQueryJS</h1>
 
             <div ng-app="">
-                <form>
-                    <h2>Convert Annual Salary to Hourly Salary</h2>
-                    <input id="annualInput" name="annualInput" type="text" placeholder="Annual Salary" ng-model="annualInput" />
-                    <ul class="actions">
-                        <li><input type="submit" value="Check" class="special" name="annualSalarySubmitButton" ng-model="annualAnswer" onclick="calcAnnualSalary()"/></li>
-                        <li><input type="reset" value="Reset" name="resetAnnualButton"/></li>
-                    </ul>
-                    <div class="12u$">
-                        <h2 id="annualResults" style="margin-top: 25px;"></h2>
-                    </div>
-                    <div class="12u$">
-                        <ul class="actions vertical">
-                            <li><a onclick="refresh()" class="button special fit" name="refreshAnnualButton">Refresh</a></li>
-                        </ul>
-                    </div>
-                </form>
-                <hr>
-                <form>
-                    <h2>Convert Hourly Salary to Annual Salary</h2>
-                    <input id="hourlyInput" name="hourlyInput" type="text" placeholder="Hourly Salary" ng-model="hourlyInput" />
-                    <ul class="actions">
-                        <li><input type="submit" value="Check" class="special" name="hourlySalarySubmitButton" ng-model="hourlyAnswer" onclick="calcHourlySalary()"/></li>
-                        <li><input type="reset" value="Reset" name="resetHourlyButton"/></li>
-                    </ul>
-                    <div class="12u$">
-                        <h2 id="hourlyResults" style="margin-top: 25px;"></h2>
-                    </div>
-                    <div class="12u$">
-                        <ul class="actions vertical">
-                            <li><a onclick="refresh()" class="button special fit" name="refreshHourlyButton">Refresh</a></li>
-                        </ul>
-                    </div>
-                </form>
+              <form>
+                <h2>Convert Annual Salary to Hourly Salary</h2>
+                <input id="annualInput" name="annualInput" type="text" placeholder="Annual Salary" ng-model="annualInput" />
+                <ul class="actions">
+                  <li><input type="submit" value="Check" class="special" name="annualSalarySubmitButton" ng-model="annualAnswer" onclick="calcAnnualSalary()"/></li>
+                  <li><input type="reset" value="Reset" name="resetAnnualButton"/></li>
+                </ul>
+                <div class="12u$">
+                  <h2 id="annualResults" style="margin-top: 25px;"></h2>
+                </div>
+                <div class="12u$">
+                  <ul class="actions vertical">
+                    <li><a onclick="refresh()" class="button special fit" name="refreshAnnualButton">Refresh</a></li>
+                  </ul>
+                </div>
+              </form>
+              <hr>
+              <form>
+                <h2>Convert Hourly Salary to Annual Salary</h2>
+                <input id="hourlyInput" name="hourlyInput" type="text" placeholder="Hourly Salary" ng-model="hourlyInput" />
+                <ul class="actions">
+                  <li><input type="submit" value="Check" class="special" name="hourlySalarySubmitButton" ng-model="hourlyAnswer" onclick="calcHourlySalary()"/></li>
+                  <li><input type="reset" value="Reset" name="resetHourlyButton"/></li>
+                </ul>
+                <div class="12u$">
+                  <h2 id="hourlyResults" style="margin-top: 25px;"></h2>
+                </div>
+                <div class="12u$">
+                  <ul class="actions vertical">
+                    <li><a onclick="refresh()" class="button special fit" name="refreshHourlyButton">Refresh</a></li>
+                  </ul>
+                </div>
+              </form>
             </div>
-        </div>
-    </section>
+          </div>
+        </section>
 
-</div>
+      </div>
 
-<!-- footer -->
-<footer id="footer" class="wrapper alt">
-    <div class="inner">
-        <ul class="menu">
-            <li>&copy; Apps by Capps. All rights reserved.</li>
-        </ul>
-    </div>
-</footer>
+      <!-- footer -->
+      <footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Apps by Capps. All rights reserved.</li>
+					</ul>
+				</div>
+			</footer>
 
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.number.js"></script>
-<script src="assets/js/jquery.number.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/skel.min.js"></script>
-<script src="assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="assets/js/main.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-<script>
-    function calcAnnualSalary()
-    {
-        var hoursPerYear = 2080;
-        var annualWage = parseFloat(document.getElementById('annualInput').value);
-        var calculate = annualWage / hoursPerYear;
-        var annualRounded = calculate.toFixed(2);
-        document.getElementById('annualResults').innerHTML = "The annual wage is $" + annualRounded;
-    }
-    function calcHourlySalary()
-    {
-        var hoursPerYear = 2080;
-        var hourlyWage = parseFloat(document.getElementById('hourlyInput').value);
-        var calculate = hourlyWage * hoursPerYear;
-        var hourlyRounded = calculate.toFixed(2);
-        document.getElementById('hourlyResults').innerHTML = "The hourly wage is $" + hourlyRounded;
-    }
-    function refresh()
-    {
-        location.reload();
-    }
-</script>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/jquery.number.js"></script>
+      <script src="assets/js/jquery.number.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+      <script>
+        function calcAnnualSalary()
+          {
+            var hoursPerYear = 2080;
+            var annualWage = parseFloat(document.getElementById('annualInput').value);
+            var calculate = annualWage / hoursPerYear;
+            var annualRounded = calculate.toFixed(2);
+            document.getElementById('annualResults').innerHTML = "The annual wage is $" + annualRounded;
+          }
+        function calcHourlySalary()
+          {
+            var hoursPerYear = 2080;
+            var hourlyWage = parseFloat(document.getElementById('hourlyInput').value);
+            var calculate = hourlyWage * hoursPerYear;
+            var hourlyRounded = calculate.toFixed(2);
+            document.getElementById('hourlyResults').innerHTML = "The hourly wage is $" + hourlyRounded;
+          }
+        function refresh()
+          {
+              location.reload();
+          }
+      </script>
 
-</body>
+  </body>
 </html>
