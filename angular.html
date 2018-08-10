@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+</head>
+<body ng-app="experienceApp" ng-controller="myCtrl">
+  <!-- Header -->
+    <header id="header">
+      <a href="/index.html" class="title">Dan Capps</a>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/portfolio/experience.html" class="active">Experience</a></li>
+          <li><a href="/portfolio/fullreferences.html" >References</a></li>
+          <li><a href="/portfolio/payscale.html">Payscale</a></li>
+        </ul>
+      </nav>
+    </header>
+  <!-- Wrapper -->
+  <div class="wrapper">
+    <section id="main" class="wrapper">
+      <div class="inner">
+        <h1 class="major">Experience Section Built With Angular JS</h1>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Company Name</th>
+                <th>Job Title</th>
+                <th>Contact Name</th>
+                <th>Contact Telephone</th>
+                <th>Dates</th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr ng-repeat="experience in experiences | orderBy : '-id'">
+                <td>
+                  <button type="button" name="editButton" ng-click="editExperience(experience.id)">&#9998; Edit</button>
+                </td>
+                <td>{{ experience.companyName }}</td>
+                <td>{{ experience.jobTitle }}</td>
+                <td>{{ experience.contactName }}</td>
+                <td>{{ experience.contactTelephone }}</td>
+                <td>{{ experience.dates }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br>
+        <div class="">
+          <h3 class="major"></h3>
+          <button type="button" name="newUserButton" ng-click="editExperience('new')">New Experience</button>
+        </div>
+
+        <!-- Form -->
+        <form ng-hide="hideform">
+          <h2 ng-show="edit">Create New Experience: </h2>
+          <h2 ng-hide="edit">Edit User: </h2>
+          <div class="row uniform">
+            <div class="6u 12u$(xsmall)">
+              <input type="text" name="companyNameInput" id="companyNameInput" ng-modal="companyName" ng-disabled="!edit" placeholder="Company Name"/>
+            </div>
+            <div class="6u 12u$(xsmall)">
+              <input type="text" name="jobTitleInput" id="jobTitleInput" ng-modal="jobTitle" ng-disabled="!edit" placeholder="Job Title"/>
+            </div>
+            <div class="6u 12u$(xsmall)">
+              <input type="text" name="contactNameInput" id="contactNameInput" ng-modal="contactName" ng-disabled="!edit" placeholder="Contact Name"/>
+            </div>
+            <div class="6u 12u$(xsmall)">
+              <input type="text" name="contactTelephoneInput" id="contactTelephoneInput" ng-modal="contactTelephone" ng-disabled="!edit" placeholder="Contact Telephone"/>
+            </div>
+            <div class="6u 12u$(xsmall)">
+              <input type="text" name="datesInput" id="datesInput" ng-modal="dates" ng-disabled="!edit" placeholder="Dates"/>
+            </div>
+          </div>
+          <br>
+          <button type="button" class="button special" name="saveChangesButton" ng-disabled="error || incomplete">Save Changes</button>
+          <br>
+        </form>
+      </div>
+    </section>
+  </div>
+  <script src="assets/js/myExperience.js"></script>
+
+</body>
+</html>
