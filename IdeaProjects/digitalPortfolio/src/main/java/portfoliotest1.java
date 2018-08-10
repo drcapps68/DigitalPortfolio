@@ -19,9 +19,6 @@ public class portfoliotest1 {
         //Maximize the window
         driver.manage().window().maximize();
 
-        //Store main window in a variable
-        String main_window = driver.getWindowHandle();
-
         //Navigate to website
         driver.get("http://dcapps.greenrivertech.net");
         Thread.sleep(2000);
@@ -48,11 +45,13 @@ public class portfoliotest1 {
         driver.findElement(By.className("title")).click();
         Thread.sleep(2000);
 
-        //TFW display
+        //TFW display then back to main page
         driver.findElement(By.name("whatido")).click();
         Thread.sleep(1000);
         driver.findElement(By.name("tfwbutton")).click();
         Thread.sleep(3000);
+        driver.navigate().back();
+        Thread.sleep(1500);
 
 
 
