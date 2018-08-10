@@ -42,7 +42,7 @@ public class portfoliotest1 {
         Thread.sleep(1000);
         driver.findElement(By.name("csmcertbutton")).click();
         Thread.sleep(3000);
-        driver.findElement(By.name("title")).click();
+        driver.findElement(By.className("title")).click();
         Thread.sleep(2000);
 
         //TFW display
