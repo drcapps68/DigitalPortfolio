@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Shopping List</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Dan Capps</a>
+				<nav>
+					<ul>
+						<li><a href="/index.html">Home</a></li>
+						<li><a href="shoppinglist.html" class="active">Shopping List</a></li>
+						<li><a href="payscale.html">Payscale</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Shopping List Created with Angular JS</h1>
+              <div ng-app="myShoppingList" ng-cloak ng-controller="myCtrl" class="w3-card-2 w3-margin" style="max-width:400px;">
+                <header class="w3-container w3-light-grey w3-padding-16">
+                  <h3>My Shopping List</h3>
+                </header>
+                <ul class="w3-ul">
+                  <li ng-repeat="x in products" class="w3-padding-16">{{x}}<span ng-click="removeItem($index)" style="cursor:pointer;" class="w3-right w3-margin-right">×</span></li>
+                </ul>
+                <div class="w3-container w3-light-grey w3-padding-16">
+                  <div class="w3-row w3-margin-top">
+                    <div class="w3-col s10">
+                      <input placeholder="Add shopping items here" ng-model="addMe" class="w3-input w3-border w3-padding">
+                    </div>
+                    <div class="w3-col s2">
+                      <button ng-click="addItem()" class="w3-btn w3-padding w3-green">Add</button>
+                    </div>
+                  </div>
+                  <p class="w3-text-red">{{errortext}}</p>
+                </div>
+              </div>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+      <script>
+        var app = angular.module("myShoppingList", []);
+        app.controller("myCtrl", function($scope) {
+            $scope.products = ["Milk", "Bread", "Cheese"];
+            $scope.addItem = function () {
+                $scope.errortext = "";
+                if (!$scope.addMe) {return;}
+                if ($scope.products.indexOf($scope.addMe) == -1) {
+                    $scope.products.push($scope.addMe);
+                } else {
+                    $scope.errortext = "The item is already in your shopping list.";
+                }
+            }
+            $scope.removeItem = function (x) {
+                $scope.errortext = "";
+                $scope.products.splice(x, 1);
+            }
+        });
+        </script>
+
+	</body>
+</html>
