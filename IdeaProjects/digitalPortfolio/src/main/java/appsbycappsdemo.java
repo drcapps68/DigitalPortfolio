@@ -19,7 +19,7 @@ public class appsbycappsdemo {
         driver.manage().window().maximize();
 
         //Navigate to website
-        driver.get("http://dcapps.greenrivertech.net");
+        driver.get("http://appsbycapps");
         Thread.sleep(2000);
 
         //Run through the website
