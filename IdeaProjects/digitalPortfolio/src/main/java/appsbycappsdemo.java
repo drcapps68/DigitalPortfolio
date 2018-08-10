@@ -52,6 +52,39 @@ public class appsbycappsdemo {
         driver.navigate().back();
         Thread.sleep(1500);
 
+        //Payscale finder display
+        driver.navigate().to("http://appsbycapps.com/portfolio/payscale.html");
+        Thread.sleep(2000);
+        //Payscale annual salary display
+        driver.findElement(By.name("annualInput")).sendKeys("85000");
+        Thread.sleep(1500);
+        driver.findElement(By.name("annualSalarySubmitButton")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.name("resetAnnualButton")).click();
+        Thread.sleep(1000);
+        //Payscale hourly salary display
+        driver.findElement(By.name("hourlyInput")).sendKeys("46.66");
+        Thread.sleep(1500);
+        driver.findElement(By.name("hourlySalarySubmitButton")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.name("refreshHourlyButton")).click();
+        Thread.sleep(1000);
+
+        //Proceed to next display
+        driver.findElement(By.name("referencesTab")).click();
+
+        //References display
+        Thread.sleep(4000);
+
+        //Proceed to next display
+        driver.findElement(By.name("experienceTab")).click();
+
+        //Experiences display
+        Thread.sleep(4000);
+
+        //Return home
+        driver.findElement(By.className("title")).click();
+
         //Close program
         driver.close();
     }
