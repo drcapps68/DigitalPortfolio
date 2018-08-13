@@ -84,6 +84,8 @@ public class appsbycappsdemo {
 
         //Return home
         driver.findElement(By.className("title")).click();
+        //Return home display
+        Thread.sleep(4000);
 
         //Close program
         driver.close();
