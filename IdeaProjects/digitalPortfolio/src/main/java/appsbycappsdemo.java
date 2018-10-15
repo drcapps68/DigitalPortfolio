@@ -4,8 +4,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 /* Dan Capps
 * 8.10.18
-* portfoliotest1.java
-* This program runs a Selenium WebDriver test for my digital portfolio at appbycapps.com
+* appsbycappsdemo.java
+* This program runs a Selenium WebDriver test which will demonstrate the functionality of my digital portfolio at appbycapps.com
 */
 
 public class appsbycappsdemo {
@@ -19,7 +19,7 @@ public class appsbycappsdemo {
         driver.manage().window().maximize();
 
         //Navigate to website
-        driver.get("http://appsbycapps");
+        driver.get("http://appsbycapps.com");
         Thread.sleep(2000);
 
         //Run through the website
@@ -84,6 +84,8 @@ public class appsbycappsdemo {
 
         //Return home
         driver.findElement(By.className("title")).click();
+        //Return home display
+        Thread.sleep(4000);
 
         //Close program
         driver.close();
